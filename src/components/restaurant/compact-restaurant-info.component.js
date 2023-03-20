@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Text } from "../typography/text.component";
-import { restaurantRequest } from "../../services/restaurants/restaurants.service";
 
 import WebView from "react-native-webview";
 import { Platform } from "react-native";
@@ -30,8 +29,8 @@ export const CompactRestaurantInfo = ({ restaurant }) => {
   const Image = isAndroid ? CompactWebView : CompactImage;
   return (
     <Item>
-      <Image source={{ uri: restaurantRequest.photos[0] }} />
-      <Text variant="caption">{restaurantRequest.name}</Text>
+      <Image source={{ uri: restaurant.photos[0] }} />
+      <Text variant="caption">{restaurant.name}</Text>
     </Item>
   );
 };
